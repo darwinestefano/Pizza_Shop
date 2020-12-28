@@ -1,0 +1,24 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-10 col-md-offset-2">
+        <div class="d-flex align-items-center p-3 my-7 text-white-50 bg-purple rounded shadow-sm">
+            <h3><span class="text-muted">My Orders</span></h3> 
+         </div>
+        {{# each orders}}
+        <div class="panel panel-default p-2 my-2">
+            <div class="panel-body">
+                <ul class="list-group">
+                    {{# each this.items}}
+                    <li class="list-group-item">
+                        <span>{{ this.item.title}}</span> | {{ this.qty }} units
+                        <span class="badge float-right"> € {{ this.price}}</span>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+           <div class="panel-footer"> <strong>Total:  € {{ this.cart.totalPrice }}</strong></div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+</div> 

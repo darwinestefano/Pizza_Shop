@@ -1,0 +1,55 @@
+ <main role="main" class="container">
+ <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+   <h3><span class="text-muted">CART ITEMS</span></h3> 
+</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Cart</li>
+
+    </ol>
+  </nav>
+{{# if products}}
+<div class="col-sm-12 col-md-12 col-md-offset-8 col-sm-offset-8">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        
+      </h4>
+      <ul class="list-group mb-3">
+          {{# each products}}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <h6 class="my-0">{{this.item.title}}</h6>
+            <small class="text-muted">{{this.item.description}}</small>
+          </div>
+          <div>
+                <a href="#"><i class="fas fa-plus"></i></a>
+                 <h6 class="my-0">{{this.qty}}</h6>
+                <a href="/reduce/{{this.item._id}}"><i class="fas fa-minus"></i></a>
+          </div>
+          <span class="text-muted">€ {{this.price}} </span>
+          <a href="/remove/{{this.item._id}}"> Remove</a>
+        </li>
+         {{/each}} 
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total (EUR)</span>
+          <strong> € {{totalPrice}}</strong>
+        </li>
+      </ul>
+    </div>
+<hr>
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+       <a href="/checkout" type="button" class="btn btn-danger"> Go to Checkout</a>
+    </div>
+</div>
+
+{{else}}
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+        <div id="success" class="alert alert-danger">
+            <span>Cart is empty!</span>
+        </div>
+    </div>
+</div>
+{{/if}}
+</main>

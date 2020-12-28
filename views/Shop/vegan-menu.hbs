@@ -1,0 +1,41 @@
+
+<div class="container">
+  <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+    <h3><span class="text-muted">VEGAN MENU</span></h3> 
+  </div>
+   <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/index">Spring Menu</a></li>
+      <li class="breadcrumb-item"><a href="/kids-menu">Kid's Menu</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Vegan Menu</li>
+    </ol>
+  </nav>
+   {{# each products}}
+    <div class="row">
+        {{# each this }}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="{{ this.imagePath }}" alt="..." class="img-thumbnail" ></img>
+            <div class="card-body">
+              <h3> {{ this.title }}</h3>
+              <p class="card-text">{{ this.description }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/add-to-cart-v/{{this._id}}"><button type="button" class="btn btn-sm btn btn-danger">BUY</button> </a>
+                 <!-- <button type="button" class="btn btn-sm btn-outline-secondary">VIEW</button> -->
+                </div>
+                <small class="price"> € {{ this.price }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}   
+    </div>
+{{/each}}
+ </div>
+
+
+ 
+        
+

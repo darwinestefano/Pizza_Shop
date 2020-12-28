@@ -1,0 +1,16 @@
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/index">Spring Menu</a></li>
+        <li class="breadcrumb-item"><a href="/vegan-menu">Vegan Menu</a></li>
+        <li class="breadcrumb-item"><a href="/vegan-menu">Kid's Menu</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+        </ol>
+    </nav>
+      <div class="col-sm-6 col-md-4 col-md-offset-4 colsm-offset-3">
+        <div id="success" class="alert alert-success" {{#if noMessage}}hidden{{/if}}>
+            {{ successMsg}}
+        </div>
+   </div>
+</div>
